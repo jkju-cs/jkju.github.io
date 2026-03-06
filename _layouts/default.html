@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}" data-mode="">
+<head>
+  {% include head.html %}
+</head>
+<body>
+
+  {% include custom-topbar.html %}
+
+  <div class="main-content-wrapper">
+    {{ content }}
+  </div>
+
+  {% include custom-footer.html %}
+
+  <!-- Chirpy post JS for TOC, copy buttons, etc. -->
+  {% if page.layout == 'post' %}
+  <script defer src="{{ '/assets/js/dist/post.min.js' | relative_url }}"></script>
+  {% endif %}
+
+</body>
+</html>

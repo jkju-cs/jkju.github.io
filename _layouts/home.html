@@ -1,0 +1,159 @@
+---
+layout: default
+---
+
+<div class="page-container">
+
+  <!-- ============================================================
+       HERO SECTION — Profile + Bio
+       ============================================================ -->
+  <section class="hero-grid" aria-label="Profile">
+
+    <!-- Profile Image -->
+    <div class="profile-img-wrap">
+      <img
+        src="{{ site.data.profile.avatar | default: '/assets/img/profile.jpg' | relative_url }}"
+        alt="{{ site.data.profile.name }} profile photo"
+        onerror="this.style.display='none'"
+      >
+    </div>
+
+    <!-- Bio Content -->
+    <div class="hero-bio">
+      <h1>{{ site.data.profile.name }}</h1>
+      <p class="hero-affiliation">{{ site.data.profile.lab }} | {{ site.data.profile.university }}</p>
+
+      <div style="margin-bottom:1.5rem;">
+        {% for para in site.data.profile.bio %}
+          <p class="hero-bio-text">{{ para }}</p>
+        {% endfor %}
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-links">
+
+        <a href="mailto:{{ site.data.profile.email }}" class="social-btn" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+
+        <a href="{{ site.data.profile.google_scholar }}" target="_blank" rel="noopener noreferrer"
+           class="social-btn" aria-label="Google Scholar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </a>
+
+        <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener noreferrer"
+           class="social-btn" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+
+        <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer"
+           class="social-btn" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
+
+      </div>
+
+      <!-- Research Interests -->
+      <div class="research-interests">
+        <h3>
+          <span>✨</span>
+          <span>Research Interests</span>
+        </h3>
+        <div class="interests-tags">
+          {% for interest in site.data.profile.research_interests %}
+            <span class="interest-tag">{{ interest }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NEWS + RECENT POSTS — Side by Side
+       ============================================================ -->
+  <section class="news-posts-grid" aria-label="News and recent posts">
+
+    <!-- News Card -->
+    <div class="section-card">
+      <div class="section-card-header">
+        <h2 class="section-card-title">News</h2>
+      </div>
+
+      {% for item in site.data.news %}
+      <div class="news-item">
+        <div class="news-date">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          {{ item.date }}
+        </div>
+        <p class="news-content">{{ item.content }}</p>
+        {% if item.link %}
+          <a href="{{ item.link | relative_url }}" class="news-link">Read more →</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Recent Posts Card -->
+    <div class="section-card">
+      <div class="section-card-header">
+        <h2 class="section-card-title">Recent Posts</h2>
+        <a href="{{ '/blog' | relative_url }}" class="view-all-link">
+          View all
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      </div>
+
+      {% for post in site.posts limit: 3 %}
+      <div class="post-item">
+        {% assign category = post.categories.first | default: 'Research' %}
+        <span class="post-category category-{{ category | downcase }}">{{ category }}</span>
+        <a href="{{ post.url | relative_url }}" class="post-title-link">
+          <h3>{{ post.title }}</h3>
+          <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+        </a>
+      </div>
+      {% endfor %}
+
+      {% if site.posts.size == 0 %}
+        <p style="color: var(--custom-muted-fg); font-size: 0.875rem;">No posts yet.</p>
+      {% endif %}
+
+    </div>
+
+  </section>
+
+</div>

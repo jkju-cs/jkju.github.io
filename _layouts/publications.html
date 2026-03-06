@@ -1,0 +1,168 @@
+---
+layout: default
+---
+
+<div class="page-container">
+
+  <!-- Header -->
+  <div class="pub-page-header">
+    <h1 class="page-title">Publications</h1>
+    <p>Research papers and articles on data visualization, human-computer interaction, and cognitive science.</p>
+    <p style="margin-top:0.75rem; color: var(--custom-muted-fg);">
+      Full list also on my
+      <a href="{{ site.data.profile.google_scholar }}" target="_blank" rel="noopener noreferrer"
+         class="text-link" style="display:inline-flex;align-items:center;gap:0.25rem;">
+        Google Scholar profile
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </p>
+  </div>
+
+  <!-- Stats Cards -->
+  {% assign total = site.data.publications | size %}
+  {% assign conf_count = 0 %}
+  {% assign journal_count = 0 %}
+  {% assign award_count = 0 %}
+  {% for pub in site.data.publications %}
+    {% if pub.type == 'Conference' %}{% assign conf_count = conf_count | plus: 1 %}{% endif %}
+    {% if pub.type == 'Journal' %}{% assign journal_count = journal_count | plus: 1 %}{% endif %}
+    {% if pub.award %}{% assign award_count = award_count | plus: 1 %}{% endif %}
+  {% endfor %}
+
+  <div class="pub-stats-grid">
+    <div class="stat-card">
+      <span class="stat-number">{{ total }}</span>
+      <span class="stat-label">Total Papers</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ conf_count }}</span>
+      <span class="stat-label">Conference</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ journal_count }}</span>
+      <span class="stat-label">Journal</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number" style="color: var(--custom-secondary);">{{ award_count }}</span>
+      <span class="stat-label">Awards</span>
+    </div>
+  </div>
+
+  <!-- Publications by Year -->
+  {% assign years = site.data.publications | map: 'year' | uniq | sort | reverse %}
+
+  {% for year in years %}
+  <div class="year-section">
+    <div class="year-header">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <h2>{{ year }}</h2>
+    </div>
+
+    {% for pub in site.data.publications %}
+      {% if pub.year == year %}
+      <article class="pub-card">
+
+        <!-- Badges -->
+        <div class="pub-badges">
+          <span class="badge badge-{{ pub.type | downcase }}">{{ pub.type }}</span>
+
+          {% assign status_class = 'badge-published' %}
+          {% if pub.status == 'Accepted' %}{% assign status_class = 'badge-accepted' %}{% endif %}
+          {% if pub.status == 'Under Review' %}{% assign status_class = 'badge-under-review' %}{% endif %}
+          <span class="badge {{ status_class }}">{{ pub.status }}</span>
+
+          {% if pub.award %}
+          <span class="badge badge-award">🏆 {{ pub.award }}</span>
+          {% endif %}
+        </div>
+
+        <!-- Title -->
+        <h3 class="pub-title">{{ pub.title }}</h3>
+
+        <!-- Authors -->
+        <p class="pub-authors">{{ pub.authors }}</p>
+
+        <!-- Venue -->
+        <p class="pub-venue">{{ pub.venue }}</p>
+
+        <!-- Links -->
+        {% if pub.links %}
+        <div class="pub-links">
+          {% if pub.links.paper %}
+          <a href="{{ pub.links.paper }}" class="pub-link pub-link-primary" target="_blank" rel="noopener noreferrer">
+            PDF
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+          {% endif %}
+          {% if pub.links.arxiv %}
+          <a href="{{ pub.links.arxiv }}" class="pub-link pub-link-outline" target="_blank" rel="noopener noreferrer">
+            arXiv
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+          {% endif %}
+          {% if pub.links.code %}
+          <a href="{{ pub.links.code }}" class="pub-link pub-link-outline" target="_blank" rel="noopener noreferrer">
+            Code
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+          {% endif %}
+          {% if pub.links.demo %}
+          <a href="{{ pub.links.demo }}" class="pub-link pub-link-demo" target="_blank" rel="noopener noreferrer">
+            Demo
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+          {% endif %}
+        </div>
+        {% endif %}
+
+      </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+
+  <!-- Peer Review Service -->
+  <div class="peer-review-section">
+    <h2>Peer Review Service</h2>
+    <p style="color: var(--custom-muted-fg); margin-bottom: 1rem;">
+      I serve as a reviewer for the following conferences and journals:
+    </p>
+    <div class="venue-badges">
+      {% for venue in site.data.profile.peer_review_venues %}
+        <span class="venue-badge">{{ venue }}</span>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>

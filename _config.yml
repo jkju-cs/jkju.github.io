@@ -1,0 +1,154 @@
+theme: jekyll-theme-chirpy
+
+# ====================
+# Site Settings
+# ====================
+lang: en
+timezone: America/New_York
+
+title: Minsuk Chang
+tagline: PhD Student @ Georgia Tech | Data Visualization & HCI
+description: >-
+  PhD student in Data Visualization and Human-Computer Interaction at Georgia Tech.
+  Research interests: visualization literacy, eye-tracking, human-AI interaction.
+
+# GitHub Pages URL — update before deploying
+# For username.github.io repo: url = "https://USERNAME.github.io", baseurl = ""
+# For project repo: url = "https://USERNAME.github.io", baseurl = "/REPO-NAME"
+url: "https://jkju-cs.github.io"
+baseurl: ""
+
+# ====================
+# Social / Profile
+# ====================
+github:
+  username: your-username
+
+social:
+  name: Minsuk Chang
+  email: mchang@gatech.edu
+  links:
+    - https://linkedin.com/in/your-profile
+    - https://github.com/your-username
+    - https://scholar.google.com/citations?user=YOUR_USER_ID
+
+# Profile avatar (used in head meta)
+avatar: /assets/img/profile.jpg
+
+# ====================
+# Theme Settings
+# ====================
+# light | dark | (leave empty = auto)
+theme_mode:
+
+# Sidebar (Chirpy default) — we override with top navbar in _layouts/default.html
+# Keep these for SEO / meta purposes
+icon:
+
+# ====================
+# Analytics
+# ====================
+analytics:
+  google:
+    id: ""   # Replace with your GA4 Measurement ID (e.g., G-XXXXXXXXXX)
+
+# ====================
+# Comments (disabled)
+# ====================
+comments:
+  provider: ""
+
+# ====================
+# Blog Settings (Chirpy)
+# ====================
+paginate: 5
+
+# Blog categories
+# (defined via post front matter)
+
+# Table of Contents
+toc: true
+
+# ====================
+# Markdown & Syntax
+# ====================
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+# ====================
+# Collections & Defaults
+# ====================
+include:
+  - _pages
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      toc: true
+      math: false
+      mermaid: false
+  - scope:
+      path: _pages
+      type: pages
+    values:
+      layout: page
+
+# ====================
+# Assets & Compression
+# ====================
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: development
+
+# ====================
+# Plugins
+# ====================
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# ====================
+# Exclude from build
+# ====================
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - output
+  - tools
+  - README.md
+  - LICENSE
+  - "*.zip"
+  - package.json
+  - agent-design.md
+  - CLAUDE.md
+  - .claude
+  - vendor
+  - node_modules

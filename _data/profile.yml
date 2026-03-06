@@ -1,0 +1,52 @@
+# ====================
+# Personal Profile Data
+# Edit this file to update your personal information
+# ====================
+
+name: Minsuk Chang
+title: PhD Student
+lab: Visualization Lab
+university: Georgia Tech
+email: mchang@gatech.edu
+
+# Social links
+google_scholar: "https://scholar.google.com/citations?user=YOUR_USER_ID"
+linkedin: "https://linkedin.com/in/your-profile"
+github: "https://github.com/your-username"
+cv_pdf: "/assets/cv.pdf"
+
+# Bio paragraphs (supports HTML)
+bio:
+  - >
+    My research field is Data Visualization and Human-Computer Interaction,
+    understanding and supporting how humans perceive and interact with data.
+    I try to combine cognitive science and computing to better support human-AI interaction.
+  - >
+    I'm currently a 2nd-year PhD student advised by
+    <a href="#" class="text-link">Cindy Xiong Bearfield</a>.
+    I've also interned at <a href="#" class="text-link">Tableau Research @ Salesforce</a>
+    in Summer 2025, where I worked with
+    <a href="#" class="text-link">Srishti Palani</a> and
+    <a href="#" class="text-link">Arjun Srinivasan</a>.
+
+# Research interests (pill badges on home page)
+research_interests:
+  - Data Visualization
+  - Human-AI Interaction
+  - Eye-tracking
+  - Decision Support Systems
+  - Cognitive Science
+
+# Peer review service (shown on publications page)
+peer_review_venues:
+  - IEEE VIS
+  - CHI
+  - ACM IUI
+  - IEEE TVCG
+
+# Collaboration topics (shown on contact page)
+collaboration_topics:
+  - Visualization literacy and education
+  - Eye-tracking and visual attention research
+  - Human-AI collaboration in data analysis
+  - Cognitive aspects of data visualization

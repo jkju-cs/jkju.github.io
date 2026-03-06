@@ -1,0 +1,23 @@
+# ====================
+# News Items
+# Add new items at the top (displayed in order)
+# link: (optional) internal or external URL
+# ====================
+
+- date: "February 2026"
+  content: >
+    The AI-Based Literacy Score Prediction Model is now open!
+    Visit the Literacy Test page to check whether you are expert or novice in visualization literacy.
+  link: "/posts/ai-literacy-prediction"
+
+- date: "January 2026"
+  content: >
+    Our paper on decision-making and critical thinking was accepted to ACM IUI 2026!
+    See you in Paphos!
+  link: "/posts/acm-iui-2026"
+
+- date: "October 2025"
+  content: >
+    Our paper on visualization literacy and visual attention was accepted to IEEE VIS 2025!
+    See you all in Vienna!
+  link: "/posts/ieee-vis-2025"
