@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "source": "docs/figma-source/",
+    "extracted_at": "2026-03-06",
+    "source_type": "react-spa",
+    "source_stack": "React 18 + React Router v7 + Tailwind CSS v4 + shadcn/ui + lucide-react",
+    "source_routes": ["/", "/publications", "/blog", "/blog/:slug", "/analytics", "/contact"],
+    "target": "Jekyll + jekyll-theme-chirpy"
+  },
+  "design_system": {
+    "colors": {
+      "light": {
+        "primary": "#1e3a8a",
+        "primary_foreground": "#ffffff",
+        "secondary": "#fbbf24",
+        "secondary_foreground": "#111827",
+        "accent": "#dbeafe",
+        "accent_foreground": "#1e3a8a",
+        "background": "#fafafa",
+        "card": "#ffffff",
+        "card_foreground": "#111827",
+        "muted": "#ececf0",
+        "muted_foreground": "#6b7280",
+        "border": "rgba(0, 0, 0, 0.1)",
+        "ring": "#1e3a8a",
+        "nav_background": "#ffffff"
+      },
+      "dark": {
+        "primary": "#fbbf24",
+        "primary_foreground": "#92400e",
+        "secondary": "#2563eb",
+        "secondary_foreground": "#ffffff",
+        "accent": "#1e3a8a",
+        "accent_foreground": "#fbbf24",
+        "background": "#111827",
+        "card": "#1f2937",
+        "card_foreground": "#f9fafb",
+        "muted": "#374151",
+        "muted_foreground": "#9ca3af",
+        "border": "#374151",
+        "ring": "#fbbf24",
+        "nav_background": "#1f2937"
+      }
+    },
+    "typography": {
+      "base_size": "16px",
+      "h1_size": "2.25rem (text-4xl)",
+      "h2_size": "1.5rem (text-2xl)",
+      "h3_size": "1.125rem (text-lg)",
+      "heading_weight": 500,
+      "body_weight": 400,
+      "font_family": "system-ui, sans-serif"
+    },
+    "spacing": {
+      "border_radius": "0.625rem",
+      "max_width_container": "64rem (max-w-5xl)",
+      "container_padding": "1rem 1.5rem 2rem",
+      "section_gap": "3rem (mb-12)"
+    },
+    "layout": {
+      "nav_type": "top-sticky",
+      "nav_height": "4rem (h-16)",
+      "nav_items": [
+        { "label": "Home", "path": "/" },
+        { "label": "Publications", "path": "/publications" },
+        { "label": "Blog", "path": "/blog" },
+        { "label": "Look who's here", "path": "/analytics" },
+        { "label": "Contact", "path": "/contact" }
+      ],
+      "nav_extras": [
+        { "type": "darkmode_toggle", "position": "right", "icon_light": "moon", "icon_dark": "sun" },
+        { "type": "button", "label": "Download CV", "href": "/assets/cv.pdf", "style": "primary-filled" }
+      ]
+    }
+  },
+  "pages": {
+    "home": {
+      "layout": "home",
+      "source_file": "app/pages/Home.tsx",
+      "sections": ["hero", "news_and_posts"],
+      "hero": {
+        "grid": "grid-cols-[300px_1fr] gap-8",
+        "profile_image": { "width": "300px", "height": "360px", "style": "rounded-lg shadow-lg object-cover" },
+        "bio_fields": ["name (h1 text-4xl)", "affiliation (text-xl primary-color)", "bio_p1", "bio_p2 (with advisor + internship links)"],
+        "social_links": [
+          { "type": "email", "icon": "Mail", "href": "mailto:", "bg": "accent" },
+          { "type": "google_scholar", "icon": "GraduationCap", "href": "https://scholar.google.com/", "bg": "accent" },
+          { "type": "linkedin", "icon": "Linkedin", "href": "https://linkedin.com/", "bg": "accent" },
+          { "type": "github", "icon": "Github", "href": "https://github.com/", "bg": "accent" }
+        ],
+        "research_interests": { "style": "pill badges flex-wrap", "bg": "accent", "text": "primary-color" }
+      },
+      "news_and_posts": {
+        "grid": "md:grid-cols-2 gap-6",
+        "news": {
+          "title": "News",
+          "items": "date (Calendar icon) + content text + optional 'Read more →' link",
+          "style": "card with border"
+        },
+        "recent_posts": {
+          "title": "Recent Posts",
+          "limit": 3,
+          "fields": "category badge (colored by type) + title (link) + date",
+          "view_all": "link to /blog"
+        }
+      }
+    },
+    "publications": {
+      "layout": "publications",
+      "source_file": "app/pages/Publications.tsx",
+      "sections": ["stats_cards", "publications_by_year", "peer_review_service"],
+      "stats_cards": {
+        "grid": "grid-cols-2 md:grid-cols-4",
+        "cards": ["Total Papers (count)", "Conference (count)", "Journal (count)", "Awards (count)"],
+        "style": "card with large bold primary-color number + label"
+      },
+      "publications_by_year": {
+        "sort": "descending by year",
+        "year_header": "Calendar icon + year h2",
+        "publication_fields": ["type badge (Conference|Journal|Workshop)", "status badge (Published|Accepted|Under Review)", "award badge (amber)", "title (h3 xl)", "authors (gray small)", "venue (italic gray)", "link buttons (PDF=primary filled, arXiv|Code=outlined, Demo=amber)"]
+      },
+      "peer_review_service": {
+        "venues": ["IEEE VIS", "CHI", "ACM IUI", "IEEE TVCG"],
+        "style": "badge list flex-wrap"
+      }
+    },
+    "blog": {
+      "layout": "chirpy_default",
+      "source_files": ["app/pages/Blog.tsx", "app/pages/BlogPost.tsx"],
+      "categories": ["Research", "Tutorial", "News", "Reflection"],
+      "category_colors": {
+        "News": "primary filled",
+        "Tutorial": "amber light",
+        "Research": "accent blue",
+        "Reflection": "accent blue"
+      },
+      "features": ["category_filter", "tag_filter", "search", "TOC", "read_time"]
+    },
+    "analytics": {
+      "layout": "analytics",
+      "source_file": "app/pages/Analytics.tsx",
+      "title": "Look who's here 👋",
+      "subtitle": "Website traffic analytics and visitor insights powered by Google Analytics",
+      "sections": [
+        {
+          "id": "ga_setup_guide",
+          "style": "info box (accent bg, left border primary)",
+          "title": "How to connect Google Analytics",
+          "content": "5 numbered steps: GA setup, property creation, tracking code, Looker Studio, embed iframe"
+        },
+        {
+          "id": "looker_studio_iframe",
+          "title": "Analytics Dashboard",
+          "style": "card with aspect-video dashed border placeholder",
+          "placeholder_text": "Embed your Google Analytics dashboard here"
+        },
+        {
+          "id": "quick_stats_cards",
+          "grid": "md:grid-cols-3",
+          "cards": ["Total Visitors (1,234)", "Avg Duration (2m 34s)", "Top Source (Google)"],
+          "style": "card with icon + large number + trend text"
+        },
+        {
+          "id": "detailed_stats",
+          "grid": "md:grid-cols-2",
+          "left": "Top Countries (rank + bar + count)",
+          "right": "Most Viewed Pages (rank + bar + count)"
+        },
+        {
+          "id": "traffic_sources",
+          "span": "md:col-span-2",
+          "content": "Traffic sources with wide progress bars"
+        },
+        {
+          "id": "custom_reports",
+          "title": "Custom Analytics Reports",
+          "placeholders": 2,
+          "style": "dashed border aspect-video"
+        },
+        {
+          "id": "technical_notes",
+          "style": "muted bg card",
+          "content": "ul list of 5 tips"
+        }
+      ]
+    },
+    "contact": {
+      "layout": "contact",
+      "source_file": "app/pages/Contact.tsx",
+      "sections": ["header", "main_grid", "collaboration_callout"],
+      "main_grid": {
+        "grid": "md:grid-cols-2",
+        "left": [
+          {
+            "id": "get_in_touch",
+            "items": [
+              { "type": "email", "icon": "Mail", "label": "Email", "value": "mchang@gatech.edu" },
+              { "type": "linkedin", "icon": "Linkedin", "label": "LinkedIn" },
+              { "type": "github", "icon": "Github", "label": "GitHub" }
+            ]
+          },
+          {
+            "id": "office_location",
+            "items": [
+              { "icon": "Building", "label": "Building", "value": "Klaus Advanced Computing Building" },
+              { "icon": "MapPin", "label": "Address", "value": "266 Ferst Drive NW, Atlanta, GA 30332" }
+            ]
+          }
+        ],
+        "right": {
+          "id": "contact_form",
+          "fields": ["name (text)", "email (email)", "subject (text)", "message (textarea 6 rows)"],
+          "submit": "Send Message (primary filled full-width)",
+          "note": "Static site note (no backend)"
+        }
+      },
+      "collaboration_callout": {
+        "style": "amber light bg, amber border",
+        "title": "Looking for Collaboration?",
+        "topics": ["Visualization literacy and education", "Eye-tracking and visual attention research", "Human-AI collaboration in data analysis", "Cognitive aspects of data visualization"]
+      }
+    }
+  },
+  "footer": {
+    "social_icons": ["email (Mail)", "linkedin (Linkedin)", "github (Github)"],
+    "copyright": "© 2026 [Name]. All rights reserved.",
+    "style": "white/card-dark bg, border-top"
+  },
+  "sample_content": {
+    "profile": {
+      "name": "Jangkyu Ju",
+      "title": "PhD Student",
+      "lab": "Visualization Lab",
+      "university": "Georgia Tech",
+      "email": "mchang@gatech.edu",
+      "google_scholar": "https://scholar.google.com/citations?user=YOUR_USER_ID",
+      "linkedin": "https://linkedin.com/in/your-profile",
+      "github": "https://github.com/your-username",
+      "bio": [
+        "My research field is Data Visualization and Human-Computer Interaction, understanding and supporting how humans perceive and interact with data. I try to combine cognitive science and computing to better support human-AI interaction.",
+        "I'm currently a 2nd-year PhD student advised by Cindy Xiong Bearfield. I've also interned at Tableau Research @ Salesforce in Summer 2025, where I worked with Srishti Palani and Arjun Srinivasan."
+      ],
+      "advisor": "Cindy Xiong Bearfield",
+      "advisor_url": "#",
+      "internship": "Tableau Research @ Salesforce",
+      "internship_url": "#",
+      "research_interests": ["Data Visualization", "Human-AI Interaction", "Eye-tracking", "Decision Support Systems", "Cognitive Science"]
+    }
+  }
+}

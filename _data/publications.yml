@@ -7,7 +7,7 @@
 # ====================
 
 - title: "Understanding Visualization Literacy through Visual Attention Patterns: An Eye-Tracking Study"
-  authors: "Minsuk Chang, Cindy Xiong Bearfield"
+  authors: "Jangkyu Ju, Cindy Xiong Bearfield"
   venue: "IEEE VIS 2025"
   year: 2025
   type: Conference
@@ -17,7 +17,7 @@
     arxiv: "#"
 
 - title: "Supporting Decision-Making and Critical Thinking with Interactive Visualizations"
-  authors: "Minsuk Chang, John Doe, Cindy Xiong Bearfield"
+  authors: "Jangkyu Ju, John Doe, Cindy Xiong Bearfield"
   venue: "ACM IUI 2026"
   year: 2026
   type: Conference
@@ -27,7 +27,7 @@
     demo: "#"
 
 - title: "AI-Powered Visualization Literacy Assessment: A Machine Learning Approach"
-  authors: "Minsuk Chang, Srishti Palani, Arjun Srinivasan, Cindy Xiong Bearfield"
+  authors: "Jangkyu Ju, Srishti Palani, Arjun Srinivasan, Cindy Xiong Bearfield"
   venue: "IEEE TVCG"
   year: 2026
   type: Journal
@@ -36,7 +36,7 @@
     arxiv: "#"
 
 - title: "Cognitive Load in Data Visualization: The Role of Chart Complexity and User Expertise"
-  authors: "Minsuk Chang, Jane Smith, Cindy Xiong Bearfield"
+  authors: "Jangkyu Ju, Jane Smith, Cindy Xiong Bearfield"
   venue: "CHI 2025"
   year: 2025
   type: Conference
@@ -48,7 +48,7 @@
     code: "#"
 
 - title: "Designing Effective Visual Analytics Tools for Non-Expert Users"
-  authors: "Minsuk Chang, Cindy Xiong Bearfield"
+  authors: "Jangkyu Ju, Cindy Xiong Bearfield"
   venue: "VIS Workshop on Visualization for the Digital Humanities"
   year: 2024
   type: Workshop

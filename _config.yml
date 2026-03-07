@@ -6,7 +6,7 @@ theme: jekyll-theme-chirpy
 lang: en
 timezone: America/New_York
 
-title: Minsuk Chang
+title: Jangkyu Ju
 tagline: PhD Student @ Georgia Tech | Data Visualization & HCI
 description: >-
   PhD student in Data Visualization and Human-Computer Interaction at Georgia Tech.
@@ -25,7 +25,7 @@ github:
   username: your-username
 
 social:
-  name: Minsuk Chang
+  name: Jangkyu Ju
   email: mchang@gatech.edu
   links:
     - https://linkedin.com/in/your-profile
