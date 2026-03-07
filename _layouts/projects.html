@@ -1,0 +1,93 @@
+---
+layout: default
+---
+
+<div class="page-container projects-page">
+
+  <!-- Header -->
+  <div style="margin-bottom:3rem;">
+    <h1>Projects</h1>
+    <p class="page-subtitle">
+      Industry and research projects in automotive UX, human-AI interaction, and cognitive engineering.
+    </p>
+  </div>
+
+  <!-- Stats -->
+  {% assign total = site.data.projects | size %}
+  {% assign ongoing = 0 %}
+  {% assign completed = 0 %}
+  {% for p in site.data.projects %}
+    {% if p.status == 'Ongoing' %}{% assign ongoing = ongoing | plus: 1 %}{% endif %}
+    {% if p.status == 'Completed' %}{% assign completed = completed | plus: 1 %}{% endif %}
+  {% endfor %}
+
+  <div class="pub-stats-grid" style="margin-bottom:3rem;">
+    <div class="stat-card">
+      <span class="stat-number">{{ total }}</span>
+      <span class="stat-label">Total Projects</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number" style="color:var(--custom-primary);">{{ ongoing }}</span>
+      <span class="stat-label">Ongoing</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ completed }}</span>
+      <span class="stat-label">Completed</span>
+    </div>
+  </div>
+
+  <!-- Project Cards -->
+  <div class="projects-grid">
+    {% for project in site.data.projects %}
+    <article class="project-card">
+
+      <!-- Card Header -->
+      <div class="project-card-header">
+        <div>
+          <span class="project-org">{{ project.organization }}</span>
+          <span class="project-period">{{ project.period }}</span>
+        </div>
+        <span class="project-status-badge {% if project.status == 'Ongoing' %}status-ongoing{% else %}status-completed{% endif %}">
+          {% if project.status == 'Ongoing' %}
+          <span class="status-dot"></span>
+          {% endif %}
+          {{ project.status }}
+        </span>
+      </div>
+
+      <!-- Title -->
+      <h2 class="project-title">{{ project.title }}</h2>
+
+      <!-- Role -->
+      <p class="project-role">{{ project.role }}</p>
+
+      <!-- Description -->
+      <p class="project-desc">{{ project.description }}</p>
+
+      <!-- Tags -->
+      <div class="project-tags">
+        {% for tag in project.tags %}
+          <span class="project-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+
+      <!-- Links -->
+      {% if project.links %}
+      <div class="pub-links" style="margin-top:1rem;">
+        {% if project.links.demo %}
+        <a href="{{ project.links.demo }}" class="pub-link pub-link-primary" target="_blank" rel="noopener noreferrer">Demo</a>
+        {% endif %}
+        {% if project.links.code %}
+        <a href="{{ project.links.code }}" class="pub-link pub-link-outline" target="_blank" rel="noopener noreferrer">Code</a>
+        {% endif %}
+        {% if project.links.report %}
+        <a href="{{ project.links.report }}" class="pub-link pub-link-outline" target="_blank" rel="noopener noreferrer">Report</a>
+        {% endif %}
+      </div>
+      {% endif %}
+
+    </article>
+    {% endfor %}
+  </div>
+
+</div>

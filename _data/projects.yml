@@ -1,0 +1,80 @@
+# ====================
+# Projects Data
+# status: Ongoing | Completed
+# links: demo, code, report (all optional)
+# ====================
+
+- title: "Head-Up Display UX Optimization for Reduced Cognitive Load"
+  organization: "Hyundai Motor Group"
+  role: "UX Researcher & Engineer"
+  period: "2023 – 2024"
+  status: Completed
+  description: >
+    Redesigned the HUD interface layout and information hierarchy to minimize
+    attentional tunneling and cognitive overload in highway driving scenarios.
+    Conducted eye-tracking studies with 40+ participants to validate design iterations.
+  tags:
+    - HCI
+    - Eye-tracking
+    - Automotive UX
+    - Cognitive Load
+
+- title: "Personalized In-Vehicle Infotainment Recommendation System"
+  organization: "Hyundai Motor Group"
+  role: "ML Engineer & Researcher"
+  period: "2023 – 2024"
+  status: Completed
+  description: >
+    Built ensemble machine learning models to personalize music, navigation,
+    and climate control recommendations based on driver behavior patterns and
+    contextual signals. Resulted in a peer-reviewed publication at AutomotiveUI 2024.
+  tags:
+    - Machine Learning
+    - Recommender Systems
+    - Automotive UX
+    - Python
+
+- title: "Driver State Monitoring via Real-Time Eye-Tracking"
+  organization: "Hyundai Motor Group"
+  role: "Research Lead"
+  period: "2024 – Present"
+  status: Ongoing
+  description: >
+    Developing a real-time system to detect driver fatigue and distraction using
+    computer vision and eye-tracking signals. Integrating alerts into the ADAS pipeline
+    to improve active safety features.
+  tags:
+    - Computer Vision
+    - Eye-tracking
+    - ADAS
+    - Safety
+
+- title: "LLM-Based Natural Language Interface for Vehicle Controls"
+  organization: "Hyundai Motor Group"
+  role: "Interaction Designer & Engineer"
+  period: "2024 – Present"
+  status: Ongoing
+  description: >
+    Exploring large language models to enable natural language commands for
+    in-vehicle controls (navigation, HVAC, media). Evaluating usability and
+    trust in human-AI interaction under driving conditions.
+  tags:
+    - LLM
+    - Human-AI Interaction
+    - Conversational UI
+    - Automotive
+
+- title: "Value-Driven Attentional Capture in HMI Design"
+  organization: "Research Project"
+  role: "Graduate Researcher"
+  period: "2022 – 2023"
+  status: Completed
+  description: >
+    Investigated how reward-associated stimuli capture visual attention in
+    human-machine interface contexts. Findings informed attention-aware design
+    guidelines for safety-critical displays. Published in Psychonomic Bulletin & Review.
+  tags:
+    - Cognitive Science
+    - Attention
+    - HMI
+    - Experimental Psychology

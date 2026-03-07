@@ -8,6 +8,8 @@
          class="{% if page.url == '/' %}active{% endif %}">Home</a>
       <a href="{{ '/publications' | relative_url }}"
          class="{% if page.url contains '/publications' %}active{% endif %}">Publications</a>
+      <a href="{{ '/projects' | relative_url }}"
+         class="{% if page.url contains '/projects' %}active{% endif %}">Projects</a>
       <a href="{{ '/blog' | relative_url }}"
          class="{% if page.url contains '/blog' or page.url contains '/posts' or page.url contains '/categories' or page.url contains '/tags' %}active{% endif %}">Blog</a>
       <a href="{{ '/analytics' | relative_url }}"
