@@ -13,7 +13,7 @@
   type: Journal
   status: Published
   links:
-    paper: "#"
+    paper: "https://journals.sagepub.com/doi/full/10.1177/00187208231181496"
 
 - title: "Comparative Analysis of Ensemble Machine Learning Models for Personalized In-Vehicle Infotainment Recommendation Systems"
   authors: "Jangkyu Ju, E. Lee, S.J. Park"
@@ -22,7 +22,7 @@
   type: Conference
   status: Published
   links:
-    paper: "#"
+    paper: "https://dl.acm.org/doi/abs/10.1145/3641308.3685021"
 
 - title: "The modulation of value-driven attentional capture by exploration for reward information"
   authors: "Jangkyu Ju, Y.S. Cho"
@@ -31,7 +31,7 @@
   type: Journal
   status: Published
   links:
-    paper: "#"
+    paper: "https://psycnet.apa.org/buy/2023-11497-001"
 
 - title: "Value-driven attention and associative learning models: a computational simulation analysis"
   authors: "J.H. Jeong, Jangkyu Ju, S. Kim, J.S. Choi, Y.S. Cho"
@@ -40,4 +40,4 @@
   type: Journal
   status: Published
   links:
-    paper: "#"
+    paper: "https://link.springer.com/article/10.3758/s13423-023-02296-0"

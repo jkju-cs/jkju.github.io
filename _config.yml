@@ -22,15 +22,15 @@ baseurl: ""
 # Social / Profile
 # ====================
 github:
-  username: your-username
+  username: jkju-cs
 
 social:
   name: Jangkyu Ju
-  email: mchang@gatech.edu
+  email: ju.jk.psych@gmail.com
   links:
-    - https://linkedin.com/in/your-profile
-    - https://github.com/your-username
-    - https://scholar.google.com/citations?user=YOUR_USER_ID
+    - https://www.linkedin.com/in/jangkyu-ju-99666724a/
+    - https://github.com/jkju-cs
+    - https://scholar.google.com/citations?user=qA_-6TQAAAAJ
 
 # Profile avatar (used in head meta)
 avatar: /assets/img/profile.jpg

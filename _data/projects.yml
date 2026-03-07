@@ -1,80 +1,164 @@
 # ====================
 # Projects Data
 # status: Ongoing | Completed
-# links: demo, code, report (all optional)
+# links: demo, code, report, paper (all optional)
 # ====================
 
-- title: "Head-Up Display UX Optimization for Reduced Cognitive Load"
-  organization: "Hyundai Motor Group"
-  role: "UX Researcher & Engineer"
-  period: "2023 – 2024"
-  status: Completed
-  description: >
-    Redesigned the HUD interface layout and information hierarchy to minimize
-    attentional tunneling and cognitive overload in highway driving scenarios.
-    Conducted eye-tracking studies with 40+ participants to validate design iterations.
-  tags:
-    - HCI
-    - Eye-tracking
-    - Automotive UX
-    - Cognitive Load
+# ── Hyundai Motor Group ──────────────────────────────────────────
 
-- title: "Personalized In-Vehicle Infotainment Recommendation System"
+- title: "IVI Data Collection Architecture & Pipeline Development"
   organization: "Hyundai Motor Group"
-  role: "ML Engineer & Researcher"
-  period: "2023 – 2024"
+  role: "Research Engineer — Lead, Schema Design & Pipeline Coordination"
+  period: "Dec 2024 – Jun 2025"
+  status: Ongoing
+  description: >
+    Redesigned the data collection system for Android Automotive OS-based IVI platforms.
+    Led schema standardization and modular API design, coordinating development across
+    IVI unit, logging middleware, and cloud-side pipeline (vDSP). Built a complete data
+    flow architecture: App → JSON Logging → Vehicle Service → Corporate Server → BI Tools.
+    Deployed in production Connect IVI units; created 40+ top-level categories with
+    modular extensibility, cutting manual schema update workload by 50%.
+  tags:
+    - Data Engineering
+    - Android Automotive OS
+    - Apache Spark
+    - Data Architecture
+    - IVI Analytics
+
+- title: "Personalized IVI Recommendation Systems"
+  organization: "Hyundai Motor Group"
+  role: "Research Engineer — First Author, Model Selection & Evaluation Lead"
+  period: "Feb 2024 – Jul 2024"
   status: Completed
   description: >
-    Built ensemble machine learning models to personalize music, navigation,
-    and climate control recommendations based on driver behavior patterns and
-    contextual signals. Resulted in a peer-reviewed publication at AutomotiveUI 2024.
+    Developed a context-aware, personalized recommendation system for in-vehicle
+    infotainment functions. Framed as a multi-class classification task using temporal,
+    spatial, sequential, and contextual driving data. Compared four ensemble ML models
+    (Random Forest, XGBoost, LightGBM, CatBoost); CatBoost achieved 0.918 precision
+    and 0.904 F1-score. Published at ACM AutomotiveUI 2024.
   tags:
     - Machine Learning
-    - Recommender Systems
+    - Ensemble Models
+    - Recommendation Systems
     - Automotive UX
-    - Python
+    - CatBoost
+  links:
+    paper: "https://dl.acm.org/doi/abs/10.1145/3641308.3685021"
 
-- title: "Driver State Monitoring via Real-Time Eye-Tracking"
+- title: "Automated VoC Sensing & Workflow Automation for IVI Feedback Analysis"
   organization: "Hyundai Motor Group"
-  role: "Research Lead"
-  period: "2024 – Present"
-  status: Ongoing
-  description: >
-    Developing a real-time system to detect driver fatigue and distraction using
-    computer vision and eye-tracking signals. Integrating alerts into the ADAS pipeline
-    to improve active safety features.
-  tags:
-    - Computer Vision
-    - Eye-tracking
-    - ADAS
-    - Safety
-
-- title: "LLM-Based Natural Language Interface for Vehicle Controls"
-  organization: "Hyundai Motor Group"
-  role: "Interaction Designer & Engineer"
-  period: "2024 – Present"
-  status: Ongoing
-  description: >
-    Exploring large language models to enable natural language commands for
-    in-vehicle controls (navigation, HVAC, media). Evaluating usability and
-    trust in human-AI interaction under driving conditions.
-  tags:
-    - LLM
-    - Human-AI Interaction
-    - Conversational UI
-    - Automotive
-
-- title: "Value-Driven Attentional Capture in HMI Design"
-  organization: "Research Project"
-  role: "Graduate Researcher"
-  period: "2022 – 2023"
+  role: "Research Engineer — ETL Pipeline Design & Dashboard Development"
+  period: "Mar 2024 – May 2024"
   status: Completed
   description: >
-    Investigated how reward-associated stimuli capture visual attention in
-    human-machine interface contexts. Findings informed attention-aware design
-    guidelines for safety-critical displays. Published in Psychonomic Bulletin & Review.
+    Automated the end-to-end Voice-of-Customer (VoC) analysis pipeline for IVI user
+    feedback. Collected data from IVI logs, surveys, and app reviews; built an ETL
+    pipeline for automatic categorization and top-issue ranking using NLP. Reduced
+    VoC analysis time from 2 weeks to 2 days. The workflow now serves as a core UX
+    monitoring system for Hyundai's infotainment platform.
   tags:
-    - Cognitive Science
-    - Attention
-    - HMI
+    - Workflow Automation
+    - NLP
+    - VoC Analysis
+    - Tableau
+    - LLM Agent
+
+- title: "Global IVI User Behavior Analysis & KPI Development"
+  organization: "Hyundai Motor Group"
+  role: "Research Engineer — Data Analyst"
+  period: "2023 – Present"
+  status: Ongoing
+  description: >
+    Ongoing analysis of in-vehicle infotainment usage across global markets (Korea,
+    Europe, India). Covers navigation, media streaming, phone projection, voice
+    recognition, and connected car services. Key metrics include MAU rate, session
+    duration, cohort retention, churn analysis, and ML-based user clustering.
+    Findings directly inform feature prioritization and UX strategy decisions.
+  tags:
+    - User Behavior Analytics
+    - SQL / Python
+    - Cohort Analysis
+    - Global Markets
+    - Tableau
+
+- title: "Integrated Metrics Monitoring Dashboard"
+  organization: "Hyundai Motor Group"
+  role: "Research Engineer — Dashboard Design & Visualization"
+  period: "2023 – 2024"
+  status: Completed
+  description: >
+    Designed and built a unified monitoring dashboard for the AVP center's key
+    performance indicators. Involved source data integration, data preprocessing,
+    data mart design, and visualization. Consolidated fragmented monitoring systems
+    from individual teams into a single Tableau-based reporting platform.
+  tags:
+    - Dashboard
+    - Tableau
+    - Data Visualization
+    - KPI Design
+
+# ── Korea University (M.S. Research) ─────────────────────────────
+
+- title: "Reward Uncertainty & Information Entropy in Visual Attention (M.S. Research)"
+  organization: "Korea University, School of Psychology"
+  role: "First Author — Experiment Design, Data Collection, Statistical Analysis"
+  period: "Mar 2021 – Feb 2023"
+  status: Completed
+  description: >
+    Investigated whether information entropy or reward variance is the primary driver
+    of value-driven attentional capture (VDAC). Conducted 4 behavioral experiments
+    (N=160+) using visual search paradigms, systematically decoupling entropy and
+    variance. Found that information entropy consistently increased attentional
+    interference toward distractors, while variance alone did not. Published in
+    JEP: Learning, Memory, and Cognition (2023). Presented at Psychonomic Society.
+  tags:
+    - Cognitive Psychology
+    - Visual Attention
     - Experimental Psychology
+    - PsychoPy / R
+    - VDAC
+  links:
+    paper: "https://psycnet.apa.org/buy/2023-11497-001"
+
+- title: "HUD Visual Complexity & Attentional Allocation in Driving"
+  organization: "Korea University, School of Psychology"
+  role: "Co-first Author — Experiment Design, Dual-Task Setup, Data Analysis"
+  period: "Mar 2021 – Aug 2021"
+  status: Completed
+  description: >
+    Examined how varying levels of HUD visual complexity (5 levels) affect drivers'
+    attentional distribution between near and far visual domains. Used a dual-task
+    paradigm (speed maintenance + peripheral detection) with 62 participants in a
+    driving simulator. Found that higher HUD complexity significantly impaired
+    far-domain detection accuracy, revealing attentional bias toward the central
+    visual field. Provided evidence-based HUD design guidelines. Published in
+    Human Factors (2024). Presented at AHFE Conference.
+  tags:
+    - HCI
+    - Automotive Safety
+    - Eye-tracking
+    - Cognitive Psychology
+    - Driving Simulator
+  links:
+    paper: "https://journals.sagepub.com/doi/full/10.1177/00187208231181496"
+
+- title: "Computational Modeling of Value-Driven Attentional Capture"
+  organization: "Korea University, School of Psychology"
+  role: "Co-Author — Model Implementation, Parameter Fitting, Performance Analysis"
+  period: "Mar 2020 – Aug 2020"
+  status: Completed
+  description: >
+    Implemented and compared four associative learning models (Rescorla-Wagner,
+    Mackintosh, SPH, Esber-Haselgrove) to explain value-driven attentional capture.
+    Used BIC for model comparison. SPH-V and EH-α models best captured phenomena
+    including uncertainty, switching inertia, and extinction resistance. Established
+    a model-based foundation for understanding attention mechanisms applicable to
+    adaptive interface design. Published in Psychonomic Bulletin & Review (2023).
+  tags:
+    - Computational Modeling
+    - Associative Learning
+    - MATLAB / Python
+    - Cognitive Science
+    - VDAC
+  links:
+    paper: "https://link.springer.com/article/10.3758/s13423-023-02296-0"
