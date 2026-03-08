@@ -21,6 +21,9 @@ layout: default
     <!-- Bio Content -->
     <div class="hero-bio">
       <h1>{{ site.data.profile.name }}</h1>
+      {% if site.data.profile.tagline %}
+      <p class="hero-tagline">{{ site.data.profile.tagline }}</p>
+      {% endif %}
       <p class="hero-affiliation">{{ site.data.profile.lab }} | {{ site.data.profile.university }}</p>
 
       <div style="margin-bottom:1.5rem;">
