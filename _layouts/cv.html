@@ -1,0 +1,198 @@
+---
+layout: default
+---
+
+<div class="page-container cv-page">
+
+  <!-- ============================================================
+       CV HEADER
+       ============================================================ -->
+  <div class="cv-header">
+    <div class="cv-header-left">
+      <h1 class="cv-name">{{ site.data.profile.name }}</h1>
+      <p class="cv-tagline">{{ site.data.profile.tagline }}</p>
+      <p class="cv-affiliation">{{ site.data.profile.lab }}, {{ site.data.profile.university }}</p>
+
+      <div class="cv-contact-row">
+        <a href="mailto:{{ site.data.profile.email }}" class="cv-contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          {{ site.data.profile.email }}
+        </a>
+        <a href="{{ site.data.profile.google_scholar }}" target="_blank" rel="noopener noreferrer" class="cv-contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+          Google Scholar
+        </a>
+        <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener noreferrer" class="cv-contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+        <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer" class="cv-contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="cv-header-right">
+      <a href="{{ site.data.profile.cv_pdf }}" target="_blank" rel="noopener noreferrer" class="cv-download-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download CV (PDF)
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       EXPERIENCE
+       ============================================================ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Experience</h2>
+
+    {% for exp in site.data.cv.experience %}
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <div>
+          <span class="cv-org">{{ exp.organization }}</span>
+          <span class="cv-role">{{ exp.role }}</span>
+          {% if exp.team %}
+          <span class="cv-team">{{ exp.team }}</span>
+          {% endif %}
+        </div>
+        <div class="cv-entry-meta">
+          <span class="cv-period">{{ exp.period }}</span>
+          {% if exp.location %}
+          <span class="cv-location">{{ exp.location }}</span>
+          {% endif %}
+        </div>
+      </div>
+      <ul class="cv-highlights">
+        {% for item in exp.highlights %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </section>
+
+  <!-- ============================================================
+       EDUCATION
+       ============================================================ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Education</h2>
+
+    {% for edu in site.data.cv.education %}
+    <div class="cv-entry">
+      <div class="cv-entry-header">
+        <div>
+          <span class="cv-org">{{ edu.institution }}</span>
+          <span class="cv-role">{{ edu.degree }}</span>
+          {% if edu.department %}
+          <span class="cv-team">{{ edu.department }}</span>
+          {% endif %}
+          {% if edu.note %}
+          <span class="cv-team" style="font-style:italic;">{{ edu.note }}</span>
+          {% endif %}
+        </div>
+        <div class="cv-entry-meta">
+          <span class="cv-period">{{ edu.period }}</span>
+          {% if edu.location %}
+          <span class="cv-location">{{ edu.location }}</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <!-- ============================================================
+       PUBLICATIONS
+       ============================================================ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Publications</h2>
+
+    {% assign years = site.data.publications | map: 'year' | uniq | sort | reverse %}
+    {% for year in years %}
+    <div class="cv-pub-year-group">
+      <span class="cv-pub-year">{{ year }}</span>
+      <div class="cv-pub-list">
+        {% for pub in site.data.publications %}
+          {% if pub.year == year %}
+          <div class="cv-pub-entry">
+            <p class="cv-pub-title">
+              {% if pub.links.paper %}
+              <a href="{{ pub.links.paper }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>
+              {% else %}
+              {{ pub.title }}
+              {% endif %}
+              {% if pub.award %}
+              <span class="cv-award-badge">🏆 {{ pub.award }}</span>
+              {% endif %}
+            </p>
+            <p class="cv-pub-authors">{{ pub.authors }}</p>
+            <p class="cv-pub-venue">{{ pub.venue }}</p>
+            <div class="cv-pub-badges">
+              <span class="badge badge-{{ pub.type | downcase }}">{{ pub.type }}</span>
+              {% if pub.status != 'Published' %}
+              <span class="badge badge-{{ pub.status | downcase | replace: ' ', '-' }}">{{ pub.status }}</span>
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <!-- ============================================================
+       SKILLS
+       ============================================================ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Skills</h2>
+    <div class="cv-skills-grid">
+      {% for group in site.data.cv.skills %}
+      <div class="cv-skill-group">
+        <span class="cv-skill-category">{{ group.category }}</span>
+        <div class="cv-skill-items">
+          {% for item in group.items %}
+          <span class="cv-skill-tag">{{ item }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PEER REVIEW SERVICE
+       ============================================================ -->
+  <section class="cv-section">
+    <h2 class="cv-section-title">Peer Review Service</h2>
+    <div class="venue-badges" style="margin-top:0.75rem;">
+      {% for venue in site.data.profile.peer_review_venues %}
+        <span class="venue-badge">{{ venue }}</span>
+      {% endfor %}
+    </div>
+  </section>
+
+</div>

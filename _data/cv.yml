@@ -1,0 +1,44 @@
+# ====================
+# CV Page Data
+# ====================
+
+experience:
+  - organization: "Hyundai Motor Group"
+    role: "Research Engineer & Data Scientist"
+    team: "Infotainment Planning Team, AVP Center"
+    period: "Mar 2023 – Present"
+    location: "Seoul, South Korea"
+    highlights:
+      - "Led IVI data collection architecture redesign for Android Automotive OS — 40+ modular event categories, 50% reduction in schema maintenance workload; deployed to production Connect IVI fleet"
+      - "Built personalized IVI content recommendation system using ensemble ML (CatBoost: 0.918 precision, 0.904 F1); published at ACM AutomotiveUI 2024"
+      - "Automated end-to-end VoC analysis pipeline (ETL + NLP + LLM agent); reduced analysis cycle from 2 weeks to 2 days"
+      - "Ongoing global IVI user behavior analysis across Korea, Europe, and India — MAU, cohort retention, churn, and ML-based user clustering"
+      - "Designed unified KPI monitoring dashboard (Tableau) consolidating fragmented reporting systems across the AVP Center"
+
+  - organization: "Korea University, School of Psychology"
+    role: "Graduate Research Assistant"
+    team: "Attention & Cognitive Science Lab"
+    period: "Mar 2021 – Feb 2023"
+    location: "Seoul, South Korea"
+    highlights:
+      - "M.S. thesis: Investigated information entropy vs. reward variance as drivers of value-driven attentional capture (VDAC); 4 behavioral experiments, N=160+; published in JEP: LMC (2023)"
+      - "Co-first author on HUD visual complexity and attentional tunneling study (driving simulator, N=62); published in Human Factors (2024)"
+      - "Implemented and compared 4 associative learning models (Rescorla-Wagner, Mackintosh, SPH, EH) for VDAC; published in Psychonomic Bulletin & Review (2023)"
+
+education:
+  - degree: "M.S. in Behavioral & Cognitive Neuroscience"
+    institution: "Korea University"
+    department: "School of Psychology"
+    period: "Mar 2021 – Feb 2023"
+    location: "Seoul, South Korea"
+    note: "Thesis: Reward uncertainty and information entropy in value-driven visual attention"
+
+skills:
+  - category: "Programming"
+    items: ["Python", "SQL", "R", "MATLAB"]
+  - category: "Machine Learning & AI"
+    items: ["CatBoost", "XGBoost", "LightGBM", "Random Forest", "NLP / LLM", "Recommendation Systems"]
+  - category: "Data & Tools"
+    items: ["Apache Spark", "Tableau", "Git", "PsychoPy", "Android Automotive OS"]
+  - category: "Research Methods"
+    items: ["Behavioral Experiments", "Driving Simulator", "Eye-tracking", "Computational Modeling", "Statistical Analysis (R)"]

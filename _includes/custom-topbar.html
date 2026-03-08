@@ -17,24 +17,14 @@
          class="{% if page.url contains '/blog' or page.url contains '/posts' or page.url contains '/categories' or page.url contains '/tags' %}active{% endif %}">Blog</a>
       <a href="{{ '/analytics' | relative_url }}"
          class="{% if page.url contains '/analytics' %}active{% endif %}">Look who's here</a>
+      <a href="{{ '/cv' | relative_url }}"
+         class="{% if page.url contains '/cv' %}active{% endif %}">CV</a>
       <a href="{{ '/contact' | relative_url }}"
          class="{% if page.url contains '/contact' %}active{% endif %}">Contact</a>
     </div>
 
     <!-- Right actions -->
     <div class="topbar-actions">
-
-      <!-- CV Download -->
-      <a href="{{ site.data.profile.cv_pdf }}" target="_blank" rel="noopener noreferrer" class="btn-cv">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-             viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        Download CV
-      </a>
 
       <!-- Mobile hamburger -->
       <button class="topbar-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">
