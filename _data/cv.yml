@@ -34,11 +34,21 @@ education:
     note: "Thesis: Reward uncertainty and information entropy in value-driven visual attention"
 
 skills:
-  - category: "Programming"
-    items: ["Python", "SQL", "R", "MATLAB"]
+  - category: "Programming Languages"
+    items: ["Python", "SQL", "R", "MATLAB", "SPSS"]
+  - category: "Data Engineering"
+    items: ["Apache Spark", "Apache Airflow", "PostgreSQL", "MySQL", "MongoDB", "BigQuery", "Apache Kafka", "AWS (S3/EMR/Athena)", "GCP (BigQuery/Vertex AI/Dataflow)"]
   - category: "Machine Learning & AI"
-    items: ["CatBoost", "XGBoost", "LightGBM", "Random Forest", "NLP / LLM", "Recommendation Systems"]
-  - category: "Data & Tools"
-    items: ["Apache Spark", "Tableau", "Git", "PsychoPy", "Android Automotive OS"]
+    items: ["CatBoost", "XGBoost", "LightGBM", "Random Forest", "TensorFlow", "PyTorch", "Scikit-learn", "NLP / LLM", "Recommendation Systems"]
+  - category: "MLOps & DevOps"
+    items: ["Docker", "MLflow", "GitHub Actions", "Jenkins", "Kubeflow"]
+  - category: "Visualization & BI"
+    items: ["Tableau", "Power BI", "Looker Studio"]
+  - category: "HCI & Research Tools"
+    items: ["PsychoPy", "Eye-tracking (Tobii)", "Driving Simulator", "Unity", "Figma"]
   - category: "Research Methods"
-    items: ["Behavioral Experiments", "Driving Simulator", "Eye-tracking", "Computational Modeling", "Statistical Analysis (R)"]
+    items: ["Behavioral Experiments", "Computational Modeling", "Statistical Analysis (R)", "Controlled Lab Studies"]
+  - category: "Frontend & Web"
+    items: ["HTML/CSS", "JavaScript", "React", "Django"]
+  - category: "Collaboration & Infra"
+    items: ["Git/GitHub", "Confluence", "Jira", "Android Automotive OS"]
